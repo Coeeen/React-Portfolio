@@ -1,13 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 40px 20px 20px 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background: linear-gradient(
+    92deg,
+    #c2e0ea -2.21%,
+    #6dc3eb -2.2%,
+    #fc9294 98.01%
+  );
+  font-family: "Outfit";
+
+  @media (max-width: 600px) {
+    padding: 5px;
+  }
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #fc9294;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

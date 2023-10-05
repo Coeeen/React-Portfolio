@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./Components/Navbar";
+import Home from "./Components/Home";
+import AbautMe from "./Components/AbautMe";
+import MyWork from "./Components/MyWork";
+import Footer from "./Components/Footer";
+import FAQ from "./Components/FaqSection";
+import { useState } from "react";
 
 function App() {
+  const [Language, setLanguage] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-slate-100 h-full rounded-md shadow-lg rounded-b-2xl">
+      <Navbar setLanguage={setLanguage} Language={Language} />
+      <Home Language={Language} />
+      <AbautMe Language={Language} />
+      <MyWork Language={Language} />
+      <FAQ Language={Language} />
+      <Footer Language={Language} />
     </div>
   );
 }
