@@ -8,12 +8,13 @@ import {
   PicturesJavascript,
 } from "../Components/Database";
 
-function MyWork({ Language }) {
+function MyWork({ Language, isChecked }) {
   const [pictureType, setPictureType] = useState(picturesAll);
+  const DarkMode = isChecked ? "text-gray-200" : "text-gray-900";
 
   return (
     <div className="mt-10" id="Portfolio">
-      <h1 className="text-center lg:text-8xl text-6xl">
+      <h1 className={`text-center lg:text-8xl text-6xl ${DarkMode}`}>
         {Language ? "Realizacje " : "My work"}
       </h1>
       <h2 className="text-center lg:text-3xl text-2xl">
@@ -24,25 +25,25 @@ function MyWork({ Language }) {
       <div className="flex justify-center ">
         <ul className="flex sm:w-1/2 justify-between my-10 w-4/5 lg:text-xl">
           <li
-            className="text-gray-900 hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
+            className={` hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300 ${DarkMode}`}
             onClick={() => setPictureType(picturesAll)}
           >
             {Language ? "WSZYSTKO" : "ALL"}
           </li>
           <li
-            className="text-gray-900 hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
+            className={` hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300 ${DarkMode}`}
             onClick={() => setPictureType(PicturesFigma)}
           >
             FIGMA
           </li>
           <li
-            className="text-gray-900 hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300"
+            className={` hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300 ${DarkMode}`}
             onClick={() => setPictureType(PicturesJavascript)}
           >
             JAVASCRIPT
           </li>
           <li
-            className="text-gray-900 hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300 "
+            className={` hover:text-gray-500  cursor-pointer font-semibold text-md relative after:bg-gray-500 after:absolute after:h-1/6 after:w-0 after:bottom-[-5px] after:left-0 hover:after:w-full after:transition-all after:duration-300 ${DarkMode}`}
             onClick={() => setPictureType(PicturesReactNext)}
           >
             REACT/NEXT
@@ -71,6 +72,7 @@ function MyWork({ Language }) {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
+                loading="lazy"
               />
             </motion.a>
           ))}

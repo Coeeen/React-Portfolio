@@ -2,7 +2,9 @@ import React from "react";
 import Avatar from "../Images/Avatar.png";
 import { motion } from "framer-motion";
 
-function Home({ Language }) {
+function Home({ Language, isChecked }) {
+  const DarkMode = isChecked ? "text-gray-200" : "text-gray-900";
+
   return (
     <div className="flex flex-col md:flex-row">
       <motion.div
@@ -24,7 +26,9 @@ function Home({ Language }) {
           animate={{ scale: 1 }}
           transition={{ duration: 1.5 }}
         >
-          <span className="bg-figmaYellow font-outfit font-medium lg:text-7xl md:text-6xl  text-5xl">
+          <span
+            className={`bg-figmaYellow font-outfit font-medium lg:text-7xl md:text-6xl  text-5xl`}
+          >
             {Language ? "Cześć! " : "Hello there! "}
           </span>
         </motion.h1>
@@ -32,7 +36,7 @@ function Home({ Language }) {
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5 }}
-          className="lg:text-3xl max-w-xl text-gray-600 mt-5 tracking-wider md:text-xl font-light text-center lg:text-start"
+          className={`${DarkMode} lg:text-3xl max-w-xl  mt-5 tracking-wider md:text-xl font-light text-center lg:text-start`}
         >
           {Language
             ? "Nazywam się Krystian Jank,zajmuję się Web Developmentem oraz UI/UX designem.Moja pasja kręci się wokół tworzenia funkcjonalnych i wizualnie atrakcyjnych stron internetowych oraz interfejsów użytkownika.Więcej o mnie niżej! "

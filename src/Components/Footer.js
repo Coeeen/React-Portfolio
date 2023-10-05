@@ -139,7 +139,7 @@ function Footer({ Language }) {
               </span>
               <h1 className="text-gray-200">
                 {Language
-                  ? "Sprawdz jeszcze mojego githuba"
+                  ? "Sprawdz jeszcze mojego githuba!"
                   : "Also check my gihub for more! "}
               </h1>
             </div>
