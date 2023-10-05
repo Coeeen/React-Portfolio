@@ -3,6 +3,17 @@ import { motion } from "framer-motion";
 function AbautMe({ Language, isChecked }) {
   const DarkMode = isChecked ? "text-gray-200" : "text-gray-900";
 
+  const staggerVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: (i) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        delay: i * 0.2,
+      },
+    }),
+  };
+
   let skils = [
     "UI/UX DESIGN",
     "GRAPHIC DESIGN",
@@ -52,12 +63,16 @@ function AbautMe({ Language, isChecked }) {
       <div className=" flex-1">
         <div className="flex flex-wrap lg:w-3/4 justify-center align-middle ">
           {skils.map((skill, key) => (
-            <button
+            <motion.button
               className={`}border-solid border-black rounded-md drop-shadow-2xl w-32 h-12 shadow-md text-center m-1  cursor-default ${DarkMode}`}
               key={key}
+              variants={staggerVariants}
+              initial="hidden"
+              animate="visible"
+              custom={key}
             >
               {skill}
-            </button>
+            </motion.button>
           ))}
         </div>
       </div>

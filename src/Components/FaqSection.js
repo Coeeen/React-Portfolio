@@ -1,9 +1,9 @@
 import React from "react";
 import { FAQTextPL, FAQTextENG } from "./Database";
-import { motion } from "framer-motion";
 import Faq from "./FAQ";
 function FaqSection({ Language, isChecked }) {
   const DarkMode = isChecked ? "text-gray-200" : "text-gray-900";
+
   return (
     <div className="my-14" id="Questions">
       <h1 className={`text-center lg:text-7xl text-6xl ${DarkMode}`}>
@@ -14,9 +14,9 @@ function FaqSection({ Language, isChecked }) {
           {Language ? "Pytania" : " Questions"}
         </span>
       </h2>
-      <motion.div className="flex flex-col  justify-center items-center" layout>
+      <div className="flex flex-col  justify-center items-center" layout>
         {Language
-          ? FAQTextPL.map((faq) => (
+          ? FAQTextPL.map((faq, index) => (
               <Faq
                 key={faq.question}
                 question={faq.question}
@@ -32,7 +32,7 @@ function FaqSection({ Language, isChecked }) {
                 isChecked={isChecked}
               />
             ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
