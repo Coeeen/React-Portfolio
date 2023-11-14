@@ -6,7 +6,7 @@ import { AiOutlineCopyrightCircle } from "react-icons/ai";
 import { BsGithub, BsTelephoneFill, BsTwitter } from "react-icons/bs";
 import { IoMdMailUnread } from "react-icons/io";
 
-function Footer({ Language }) {
+function Footer({ Language, isMobile }) {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -31,7 +31,7 @@ function Footer({ Language }) {
   };
 
   return (
-    <div className="bg-figmaBlack rounded-b-2xl" id="Contact h-full">
+    <div className="bg-figmaBlack rounded-b-2xl  h-full" id="Contact">
       <h1 className="text-center lg:text-7xl text-6xl text-gray-100">
         {Language ? "Poznajmy się" : "Get in touch..."}
       </h1>
@@ -51,20 +51,20 @@ function Footer({ Language }) {
             type="text"
             name="to_name"
             placeholder={Language ? "Imie i nazwisko" : "Fullname"}
-            className="bg-transparent lg:text-xl border-b-4 w-1/4 p-5 text-gray-200 focus:outline-none text-md"
+            className="bg-transparent lg:text-xl border-b-4 w-1/2 p-5 text-gray-200 focus:outline-none text-md lg:w-1/3"
             required
           />
           <input
             type="email"
             name="from_name"
             placeholder="E-Mail"
-            className="bg-transparent  border-b-4 w-1/4 p-5 text-gray-200 focus:outline-none text-md lg:text-xl"
+            className="bg-transparent  border-b-4 w-1/2 p-5 text-gray-200 focus:outline-none text-md lg:text-xl lg:w-1/3"
             required
           />
           <textarea
             name="message"
             placeholder={Language ? "Wiadomość" : "Message"}
-            className="bg-transparent  border-b-4 w-1/4 p-5 text-gray-200 focus:outline-none text-md lg:text-xl"
+            className="bg-transparent  border-b-4 w-1/2 p-5 text-gray-200 focus:outline-none text-md lg:text-xl lg:w-1/3"
             required
           />
           <input
@@ -84,7 +84,7 @@ function Footer({ Language }) {
         <div className="flex justify-center lg:gap-20 gap-10 flex-col sm:flex-row items-center">
           <motion.div
             className="flex"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: isMobile ? 0 : 70 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.2 }}
           >
@@ -97,7 +97,7 @@ function Footer({ Language }) {
           </motion.div>
           <motion.div
             className="flex"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: isMobile ? 0 : 70 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.2 }}
           >
@@ -110,7 +110,7 @@ function Footer({ Language }) {
           </motion.div>
           <motion.div
             className="flex"
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: isMobile ? 0 : 70 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.5, delay: 0.2 }}
           >

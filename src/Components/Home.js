@@ -2,7 +2,7 @@ import React from "react";
 import Avatar from "../Images/Avatar.png";
 import { motion } from "framer-motion";
 
-function Home({ Language, isChecked }) {
+function Home({ Language, isChecked, isMobile }) {
   const DarkMode = isChecked ? "text-gray-200" : "text-gray-900";
 
   return (
@@ -33,7 +33,7 @@ function Home({ Language, isChecked }) {
           </span>
         </motion.h1>
         <motion.p
-          initial={{ opacity: 0, x: 100 }}
+          initial={{ opacity: 0, x: isMobile ? 0 : 100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 1.5 }}
           className={`${DarkMode} lg:text-3xl max-w-xl  mt-5 tracking-wider md:text-xl font-light text-center lg:text-start`}

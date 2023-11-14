@@ -51,11 +51,6 @@ export const picturesAll = [
     name: "BlackJack game",
     url: "https://coeen-blackjack.netlify.app/",
   },
-  {
-    picture: Portfolio,
-    name: "You are here :)",
-    url: "#",
-  },
 ];
 
 export const PicturesFigma = [
@@ -112,11 +107,6 @@ export const PicturesReactNext = [
     picture: Netflix,
     name: "Netflix website",
     url: "https://coeen-netflix.netlify.app/",
-  },
-  {
-    picture: Portfolio,
-    name: "Portfolio",
-    url: "#",
   },
   {
     picture: TechConnect,

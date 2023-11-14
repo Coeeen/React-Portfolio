@@ -46,7 +46,7 @@ function Navbar({ Language, setLanguage, isChecked, setIsChecked }) {
 
   return (
     <nav className="mb-12">
-      <div className="flex justify-between p-5">
+      <div className="flex justify-between md:p-5 py-5">
         <h1>
           <span className="bg-figmaYellow font-outfit font-medium lg:text-5xl cursor-default hidden sm:block">
             Krystian Jank
@@ -54,7 +54,7 @@ function Navbar({ Language, setLanguage, isChecked, setIsChecked }) {
         </h1>
         <ul className="flex justify-evenly sm:w-1/2 lg:text-2xl w-full ">
           <li className={`${DarkMode} hover:text-gray-400 cursor-pointer`}>
-            {Language ? "O mnie " : "Abaut Me"}
+            {Language ? "O mnie " : "About Me"}
           </li>
           <li
             className={`${DarkMode} hover:text-gray-400 cursor-pointer`}
@@ -90,13 +90,13 @@ function Navbar({ Language, setLanguage, isChecked, setIsChecked }) {
             className="sr-only"
           />
           <div
-            className={`shadow-card flex lg:h-[46px] lg:w-[82px] h-[26px] w-[52px] items-center justify-center rounded-md ${
-              isChecked ? "bg-figmaYellow" : "bg-slate-400"
+            className={`shadow-card flex lg:h-[46px] lg:w-[82px] h-[26px] w-[52px] items-center justify-center rounded-md mr-3 ${
+              isChecked ? "bg-figmaYellow" : "bg-slate-100"
             } shadow-sm `}
           >
             <span
               className={`flex h-9 w-9 items-center justify-center rounded ${
-                !isChecked ? "bg-primary text-white" : "text-body-color"
+                !isChecked ? "bg-primary text-slate-500" : "text-body-color"
               }`}
             >
               <svg

@@ -14,9 +14,9 @@ function FaqSection({ Language, isChecked }) {
           {Language ? "Pytania" : " Questions"}
         </span>
       </h2>
-      <div className="flex flex-col  justify-center items-center" layout>
+      <div className="flex flex-col  justify-center items-center" layout="true">
         {Language
-          ? FAQTextPL.map((faq, index) => (
+          ? FAQTextPL.map((faq) => (
               <Faq
                 key={faq.question}
                 question={faq.question}

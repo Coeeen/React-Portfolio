@@ -1,10 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-function AbautMe({ Language, isChecked }) {
+
+function AbautMe({ Language, isChecked, isMobile }) {
   const DarkMode = isChecked ? "text-gray-200" : "text-gray-900";
 
   const staggerVariants = {
-    hidden: { opacity: 0, x: -100 },
+    hidden: { opacity: 0, x: isMobile ? -50 : -100 },
     visible: (i) => ({
       opacity: 1,
       x: 0,
@@ -44,13 +45,13 @@ function AbautMe({ Language, isChecked }) {
         >
           {Language ? "Coś" : " Something"}
           <span className="bg-figmaYellow font-outfit font-medium lg:text-5xl text-3xl ml-2 text-gray-900">
-            {Language ? "o mnie" : "abaut me "}
+            {Language ? "o mnie" : "about me "}
           </span>
         </h1>
         <div className="flex justify-center align-middle">
           <motion.p
             className={`lg:text-3xl ${DarkMode} mt-5 tracking-wider font-light text-center mb-10 max-w-xl`}
-            initial={{ opacity: 0, x: -100 }}
+            initial={{ opacity: 0, x: isMobile ? 0 : -100 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.5, delay: 0.2 }}
           >
